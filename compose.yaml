@@ -1,0 +1,16 @@
+name: pursha-adventure
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      WHATSAPP_NUMBER: ${WHATSAPP_NUMBER:-}
+      PRICE_BROMO: ${PRICE_BROMO:-}
+      PRICE_IJEN: ${PRICE_IJEN:-}
+      PRICE_KOMODO: ${PRICE_KOMODO:-}
+      PRICE_SUMBA: ${PRICE_SUMBA:-}
+    ports:
+      - "127.0.0.1:8088:80"
+    restart: unless-stopped
